@@ -3,7 +3,7 @@
 Evidence-based medicine (EBM) represents a paradigm of providing patient care grounded in the most current and rigorously evaluated research. Recent advances in large language models (LLMs) offer a potential solution to transform EBM by automating labor-intensive tasks and thereby improving the efficiency of clinical decision-making.
 This study explores integrating LLMs into the key stages in EBM, evaluating their ability across evidence retrieval (PICO extraction, biomedical question answering), synthesis (summarizing randomized controlled trials), and dissemination (medical text simplification). We conducted a comparative analysis of seven LLMs, including both proprietary and open-source models, as well as those fine-tuned on medical corpora. Specifically, we benchmarked the performance of various LLMs on each EBM task under zero-shot settings as baselines, and employed prompting techniques, including in-context learning, chain-of-thought reasoning, and knowledge-guided prompting to enhance their capabilities.
 
-## Detailed descriptions
+## Detailed task descriptions
 
 Four tasks in evidence-based medicine are benchmarked in our code, including PICO extraction, biomedical question answering (QA), summarizing randomized controlled trials (RCT), and medical text simplification. 
 
@@ -23,6 +23,38 @@ Generating high-quality summaries that synthesize evidence from clinical trials 
 
 ### Medical text simplification
 Medical text simplification refers to the process of simplifying complex medical text to make it more understandable, especially for patients and caregivers with limited health literacy. The dataset for medical text simplification can be downloaded from: https://github.com/nikhilpriyatam/medical_text_simplification/tree/master/data
+
+
+## Deployment for open-source models
+
+Open-source models including FLAN-UL2, Med-Alpaca, and PMC-LLaMA can be deployed using the `Transformers` library from HuggingFace. Here is an example code for each model using `Tokenizer` and model instantiation:
+
+FLAN-UL2:
+```
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+tokenizer = AutoTokenizer.from_pretrained("google/flan-ul2")
+model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-ul2")
+```
+
+Med-Alpaca:
+```
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+tokenizer = AutoTokenizer.from_pretrained("medalpaca/medalpaca-7b")
+model = AutoModelForCausalLM.from_pretrained("medalpaca/medalpaca-7b")
+```
+
+PMC-LLaMA:
+```
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+tokenizer = AutoTokenizer.from_pretrained("axiong/PMC_LLaMA_13B")
+model = AutoModelForCausalLM.from_pretrained("axiong/PMC_LLaMA_13B")
+```
+
+Alternatively, you can use the `pipeline` interface in `Transformer` library for simpler access that abstracts away most of the lower-level steps involved in setting up and using these models. It offers a more streamlined and straightforward way to interact with the models for typical tasks.
+
 
 
 ## License
