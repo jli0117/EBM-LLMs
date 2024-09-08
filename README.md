@@ -56,6 +56,14 @@ model = AutoModelForCausalLM.from_pretrained("axiong/PMC_LLaMA_13B")
 Alternatively, you can use the `pipeline` interface in `Transformer` library for simpler access that abstracts away most of the lower-level steps involved in setting up and using these models. It offers a more streamlined and straightforward way to interact with the models for typical tasks.
 
 
+## Prompting strategies
+
+Knowledge-guided prompting and Chain of Thought (CoT) prompting enhance large language models in specialized medical tasks. Knowledge-guided prompting integrates domain-specific expertise, improving accuracy in tasks like PICO extraction and RCT summarization by providing clear definitions and structured guidelines:
+
+![Knowledge-guided prompting.](./prompt.png)
+
+CoT prompting encourages LLMs to articulate their reasoning step-by-step, leading to better performance in biomedical question answering. In the BioASQ dataset, a basic prompt like _"please respond with 'yes' or 'no'"_ is enhanced to _"please first respond with 'yes' or 'no,' followed by a brief explanation of your reasoning process, ensuring that your explanation aligns with the study's findings."_ Similarly, for the PubMedQA dataset, the prompt becomes _"please first respond with 'yes,' 'no,' or 'maybe,' and then provide a detailed explanation in 1-2 sentences."_
+
 
 ## License
 
