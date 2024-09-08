@@ -16,7 +16,7 @@ PICO extraction is the task of identifying the key components of a clinical stud
 
 ### Biomedical QA
 
-Biomedical question answering is the task of answering natural language questions about biomedical topics using relevant information from a given corpus of text. The dataset for biomedical QA can be downloaded from: https://microsoft.github.io/BLURB/tasks.html#dataset_bioasq-taskb
+Biomedical question answering is the task of answering natural language questions about biomedical topics using relevant information from a given corpus of text. The dataset for biomedical QA can be downloaded from: https://microsoft.github.io/BLURB/tasks.html#dataset_bioasq-taskb https://pubmedqa.github.io/
 
 ### RCT summarizaiton 
 Generating high-quality summaries that synthesize evidence from clinical trials is crucial for enabling evidence-based medicine. These summaries allow practitioners to quickly understand the key findings, strengths, limitations, and implications across relevant trials on a topic. The input is the titles and abstracts of RCTs included in a Cochrane review, and the target is the Authors' Conclusions from the review abstract. The dataset for RCT summarization can be downloaded from: https://github.com/bwallace/RCT-summarization-data
@@ -58,7 +58,7 @@ Alternatively, you can use the `pipeline` interface in `Transformer` library for
 
 ## Prompting strategies
 
-Knowledge-guided prompting and Chain of Thought (CoT) prompting enhance large language models in specialized medical tasks. Knowledge-guided prompting integrates domain-specific expertise, improving accuracy in tasks like PICO extraction and RCT summarization by providing clear definitions and structured guidelines:
+Knowledge-guided prompting and CoT prompting enhance large language models in specialized medical tasks. Knowledge-guided prompting integrates domain-specific expertise, improving accuracy in tasks like PICO extraction and RCT summarization by providing clear definitions and structured guidelines:
 
 ![Knowledge-guided prompting.](./prompt.png)
 
